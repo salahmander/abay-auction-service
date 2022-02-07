@@ -1,2 +1,2 @@
-# Abay-auction-service
+# abay-auction-service
 Abay Auction Service using AWS cloud infrastructure 
