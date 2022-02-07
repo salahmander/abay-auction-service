@@ -23,7 +23,7 @@ async function createAuction(event, context) {
 
   await dyanmodb
     .put({
-      TableName: "AuctionsTable",
+      TableName: process.env.AUCTIONS_TABLE_NAME,
       Item: auction,
     })
     .promise();
