@@ -1,5 +1,4 @@
-service:
-  name: abay
+service: abay
 
 plugins:
   - serverless-bundle
@@ -10,6 +9,7 @@ provider:
   runtime: nodejs12.x
   memorySize: 256
   stage: ${opt:stage, 'dev'}
+  region: eu-west-1
   
 functions:
   hello:
