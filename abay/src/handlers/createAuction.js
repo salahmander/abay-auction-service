@@ -8,6 +8,9 @@ const dynamodb = new AWS.DynamoDB.DocumentClient();
 async function createAuction(event, context) {
   const { title } = event.body;
   const now = new Date();
+  const endDate = new Date();
+  endDate.setDays(now.getDays() + 1); // Close Auction after 1 day (24 hours later of the 'now' date) 
+
 
   /**
    * Should not store any dynamic data in your global context of your
@@ -21,6 +24,7 @@ async function createAuction(event, context) {
     title,
     status: "OPEN",
     createdAt: now.toISOString(),
+    endingAt: endDate.toISOString(),
     highestBid: {
       amount: 0,
     },
