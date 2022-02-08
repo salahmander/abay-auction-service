@@ -1,9 +1,9 @@
-import { v4 as uuid } from 'uuid';
-import AWS from 'aws-sdk';
-import createError from 'http-errors';
-import validator from '@middy/validator';
-import commonMiddleware from '../middleware/commonMiddleware';
-import createAuctionSchema from '../utils/schemas/createAuctionSchema';
+import { v4 as uuid } from "uuid";
+import AWS from "aws-sdk";
+import createError from "http-errors";
+import validator from "@middy/validator";
+import commonMiddleware from "../middleware/commonMiddleware";
+import createAuctionSchema from "../utils/schemas/createAuctionSchema";
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
@@ -11,7 +11,7 @@ async function createAuction(event, context) {
   const { title } = event.body;
   const now = new Date();
   const endDate = new Date();
-  endDate.setDays(now.getDays() + 1); // Close Auction after 1 day (24 hours later of the 'now' date)
+  endDate.setHours(now.getHours() + 1); // Close Auction after 1 hour of the start date
 
   /**
    * Should not store any dynamic data in your global context of your
@@ -20,6 +20,7 @@ async function createAuction(event, context) {
    * single time you call it. Storing dynamic data is not reliable.
    * Only store static data, if needed.
    */
+
   const auction = {
     id: uuid(),
     title,
