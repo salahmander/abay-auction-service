@@ -1,2 +1,13 @@
 # abay-auction-service
-Abay Auction Service using AWS cloud infrastructure 
+Abay is fullStack auction application (React, Node.js, AWS, Microservices)
+
+## Front-end 
+
+
+## Auction Service
+
+
+## Auth Service
+
+
+## Notification Service
