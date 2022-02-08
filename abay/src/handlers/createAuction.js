@@ -16,7 +16,7 @@ async function createAuction(event, context) {
    * Should not store any dynamic data in your global context of your
    * lambda functions. Lambda does not guarantee that you will always
    * hit the same instance, where the lambda is running and executed every
-   * single time you call it. Storing dynamic data up there is not reliable.
+   * single time you call it. Storing dynamic data is not reliable.
    * Only store static data, if needed.
    */
   const auction = {
