@@ -1,4 +1,4 @@
-# 🛒 Auction Service Project (Abay) [Archived]
+# 🛒 Auction Service Project [Archived]
 
 A **serverless auction platform** inspired by eBay, designed to deepen my understanding of **Node.js, AWS, and microservices architecture**.  
 
